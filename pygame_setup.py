@@ -9,9 +9,20 @@ global screenHeight
 
 pygame_inst = pygame
 
+class CharacterControlEvent(object):
+	def __init__(self):
+		pass
+	def onRight(self):
+		pass
+	def onLeft(self):
+		pass
+	def onUp(self):
+		pass
+	def onDown(self):
+		pass
 
 
-class eventHandler:
+class eventHandler():
 	def __init__(self):
 		global pygame_inst
 		global screenWidth
@@ -33,15 +44,7 @@ class eventHandler:
 				screenWidth = event.w
 				screenHeight = event.h
 				display = self.display
-
-	def onLeft(self):
-		pass
-	def onRight(self):
-		pass
-	def onUp(self):
-		pass
-	def onDown(self):
-		pass
+	
 
 
 	def mainKeyHandler(self):
@@ -56,6 +59,7 @@ class eventHandler:
 				if event.key == self.pygame.K_DOWN  or self.pygame.K_s:
 					self.onDown()
 
+
 class draw:
 	def __init__(self):
 		pass
@@ -63,7 +67,7 @@ class draw:
 		label = myfont.render(string, 1, color)
 		disp.blit(label,(x,y))
 
-class setup_(object):
+class setup_():
 	def __init__(self,width,height):
 		#screen variables
 		global frameRate 
@@ -88,7 +92,7 @@ class setup_(object):
 		self.clock = self.pygame.time.Clock()
 		self.font = self.pygame.font.SysFont("monospace",30)
 
-		self.eventHandler = eventHandler()
+		self.EventHandler = eventHandler()
 
 
 	def run(self):
@@ -100,13 +104,9 @@ class setup_(object):
 			#Checks for key events
 			
 			#Closes when exited
-
-			self.eventHandler.closeOnExit()
+			self.EventHandler.mainKeyHandler()
+			self.EventHandler.closeOnExit()
 			self.display = display
 
 			self.clock.tick(self.frameRate)
 			self.pygame.display.update()
-
-
-
-
