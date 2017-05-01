@@ -33,6 +33,42 @@ class eventHandler:
 				screenWidth = event.w
 				screenHeight = event.h
 				display = self.display
+	def onLeft(self):
+		for event in self.pygame.event.get():
+			if event.type == self.pygame.KEYDOWN:
+				if event.key == self.pygame.K_LEFT  or self.python.K_a:
+					return True
+				else:
+					return False
+			else:
+				return False
+	def onRight(self):
+		for event in self.pygame.event.get():
+			if event.type == self.pygame.KEYDOWN:
+				if event.key == self.pygame.K_RIGHT  or self.python.K_d:
+					return True
+				else:
+					return False
+			else:
+				return False
+	def onUp(self):
+		for event in self.pygame.event.get():
+			if event.type == self.pygame.KEYDOWN:
+				if event.key == self.pygame.K_UP  or self.python.K_s:
+					return True
+				else:
+					return False
+			else:
+				return False
+	def onDown(self):
+		for event in self.pygame.event.get():
+			if event.type == self.pygame.KEYDOWN:
+				if event.key == self.pygame.K_DOWN or self.python.K_s:
+					return True
+				else:
+					return False
+			else:
+				return False
 class draw:
 	def __init__(self):
 		pass
