@@ -1,5 +1,5 @@
 # pygame-game
-An easy setup file for python
+An easy setup file for pygame
 
 # Example
 
