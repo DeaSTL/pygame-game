@@ -5,7 +5,7 @@ An easy setup file for python
 
 
 ```python
-import pygame-setup
+import pygameapp
 class main(pygame-setup.App):
   def onStart(self):
     #Initialization 
